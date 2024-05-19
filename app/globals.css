@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255; /* White text color */
+  --background-start-rgb: 245, 245, 220; /* Khaki gradient start color */
+  --background-end-rgb: 230, 230, 200; /* Light khaki gradient end color */
+  --primary-color-rgb: 189, 183, 107; /* Dark Khaki color for buttons and accents */
+  --secondary-color-rgb: 255, 255, 255; /* White color for text and backgrounds */
+  --accent-color-rgb: 178, 34, 34; /* Firebrick red color for delete buttons */
+  --input-bg-rgb: 189, 183, 107; /* Dark Khaki background for inputs */
+  --input-text-rgb: 255, 255, 255; /* White text color for inputs */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255; /* White text color for dark mode */
+    --background-start-rgb: 50, 50, 50; /* Dark gray gradient start color */
+    --background-end-rgb: 30, 30, 30; /* Dark gray gradient end color */
+    --primary-color-rgb: 169, 169, 169; /* Dark gray color for buttons and accents */
+    --secondary-color-rgb: 20, 20, 20; /* Dark mode background color for cards */
+    --accent-color-rgb: 255, 69, 58; /* Red color for delete buttons */
+    --input-bg-rgb: 169, 169, 169; /* Dark gray background for inputs in dark mode */
+    --input-text-rgb: 255, 255, 255; /* White text color for inputs in dark mode */
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgb(var(--background-end-rgb))
+  ) rgb(var(--background-start-rgb));
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  padding: 0;
+  margin: 0;
+}
+
+input, button, form {
+  transition: all 0.3s ease;
+}
+
+input {
+  border: 2px solid rgba(var(--primary-color-rgb), 0.8);
+  background-color: rgba(var(--input-bg-rgb), 0.9);
+  color: rgb(var(--input-text-rgb)); /* White text color */
+  border-radius: 8px;
+  padding: 0.75rem;
+}
+
+input::placeholder {
+  color: #000; /* Black placeholder text */
+}
+
+button {
+  background-color: rgb(var(--primary-color-rgb));
+  color: rgb(var(--secondary-color-rgb));
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+button:hover {
+  background-color: rgba(var(--primary-color-rgb), 0.8);
+}
+
+li {
+  background-color: rgba(var(--secondary-color-rgb), 0.9);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+li button {
+  background-color: rgb(var(--accent-color-rgb));
+  padding: 0.5rem;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  line-height: 0;
+}
+
+li button:hover {
+  background-color: rgba(var(--accent-color-rgb), 0.8);
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: rgb(var(--primary-color-rgb));
+  margin-bottom: 1rem;
+}
+
+form {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: 3fr 2fr auto;
+  margin-bottom: 2rem;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
